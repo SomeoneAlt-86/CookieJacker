@@ -6,6 +6,7 @@ Download the script or simply ```curl -o https://raw.githubusercontent.com/Someo
 
 Run the script
 ```python cookie.py```  
+
 Thats it, you now have the cookies and the session. 
 
 ## Disclaimer 
