@@ -1,7 +1,7 @@
 ## CookieJacker 
 A simple python script to steal all the cookies from a user on any windows pc.
 
-##Get Started 
+## Get Started 
 Download the script or simply ```curl -o https://raw.githubusercontent.com/SomeoneAlt-86/CookieJacker/main/cookie.py```
 Run the script
 Thats it, uou have the cookies and the session. 
